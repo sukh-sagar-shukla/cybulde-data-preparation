@@ -3,9 +3,12 @@ from cybulde.utils.config_utils import get_config
 
 
 @get_config(config_path="../configs", config_name="config")
-def entrypoint(config: Config) -> None:
+def process_data(config: Config) -> None:
     print(config)
+    github_access_token = acess_secret_version("cybulde", "cybulde-data-github-access-token")
+    print(f"{github_access_token}")
 
 
 if __name__ == "__main__":
-    entrypoint()  # type: ignore
+    process_data()  # type: ignore
+    
